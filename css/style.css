@@ -7479,22 +7479,37 @@ h1, h2, h3, h4, h5,
     #colorlib-main {
       width: 80%; } }
 
-      #searchthis #search-btn {
-        background-color: #E8B960;   /* Couleur de fond */
-        border-style: solid;   /* Style de la bordure  */
-        border-width: 1px;   /* Epaisseur de la bordure  */
-        border-color: #E8B960;   /* Couleur de la bordure  */
-        padding: 5px 10px 5px 10px;   /* Espace entre les bords et le contenu : haut droite bas gauche  */
-        width: 98.5%;   /* Permet d'ajuster la largeur du bouton à 100% */
-        box-sizing: border-box;   /* Important */
-        font-family: PT sans;   /* Police du texte */
-        font-size: 13px;   /* Taille de la police du texte */
-        font-weight: normal;   /* Graisse du texte : normal = normal ; bold = gras */
-        letter-spacing: 2px;   /* Espacement des caractères */
-        margin: 10px 0 0 0;   /* Espace autour du bouton : haut droite bas gauche  */
-        text-transform: uppercase;   /* Transforme le texte en majuscules */
-        color: #ffffff;   /* Couleur du texte */
-      }
+#searchthis #search {
+  background-color: #ffffff;   /* Couleur de fond */
+  border-style: solid;   /* Style de la bordure  */
+  border-width: 1px;   /* Epaisseur de la bordure  */
+  border-color: #dddddd;   /* Couleur de la bordure  */
+  padding: 5px 10px 5px 10px;   /* Espace entre les bords et le contenu : haut droite bas gauche  */
+  width: 98.5%;   /* Permet d'ajuster la largeur du champ de saisie à 100% */
+  box-sizing: border-box;   /* Important */
+  font-family: Lato;   /* Police du texte */
+  font-size: 12px;   /* Taille de la police du texte */
+  font-weight: normal;   /* Graisse du texte : normal = normal ; bold = gras */
+  letter-spacing: 1px;   /* Espacement des caractères */
+}
+#searchthis #search-btn {
+  background-color: #E8B960;   /* Couleur de fond */
+  border-style: solid;   /* Style de la bordure  */
+  border-width: 1px;   /* Epaisseur de la bordure  */
+  border-color: #E8B960;   /* Couleur de la bordure  */
+  padding: 5px 10px 5px 10px;   /* Espace entre les bords et le contenu : haut droite bas gauche  */
+  width: 98.5%;   /* Permet d'ajuster la largeur du bouton à 100% */
+  box-sizing: border-box;   /* Important */
+  font-family: PT sans;   /* Police du texte */
+  font-size: 13px;   /* Taille de la police du texte */
+  font-weight: normal;   /* Graisse du texte : normal = normal ; bold = gras */
+  letter-spacing: 2px;   /* Espacement des caractères */
+  margin: 10px 0 0 0;   /* Espace autour du bouton : haut droite bas gauche  */
+  text-transform: uppercase;   /* Transforme le texte en majuscules */
+  color: #ffffff;   /* Couleur du texte */
+}
+
+
 
 .colorlib-nav-toggle {
   cursor: pointer;
