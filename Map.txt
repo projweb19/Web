@@ -1,8 +1,7 @@
 <div>
-     <iframe width="800" height="800" frameborder="0" src="https://www.bing.com/maps/embed?h=800&w=800&cp=47.540084275060664~71.96697998046834&lvl=5&typ=d&sty=r&src=SHELL&FORM=MBEDV8" scrolling="no">
+     <iframe width="250" height="250" frameborder="0" src="https://www.bing.com/maps/embed?h=250&w=250&cp=48.94918412700089~-14.603444080779733&lvl=1&typ=d&sty=h&src=SHELL&FORM=MBEDV8" scrolling="no">
      </iframe>
-     <div style="white-space: nowrap; text-align: center; width: 800px; padding: 6px 0;">
-        <a id="largeMapLink" target="_blank" href="https://www.bing.com/maps?cp=47.540084275060664~71.96697998046834&amp;sty=r&amp;lvl=5&amp;FORM=MBEDLD">Afficher une carte plus grande</a> &nbsp; | &nbsp;
-        <a id="dirMapLink" target="_blank" href="https://www.bing.com/maps/directions?cp=47.540084275060664~71.96697998046834&amp;sty=r&amp;lvl=5&amp;rtp=~pos.47.540084275060664_71.96697998046834____&amp;FORM=MBEDLD">Calculer l’itinéraire</a>
+     <div style="white-space: nowrap; text-align: center; width: 250px; padding: 6px 0;">
+        <a id="largeMapLink" target="_blank" href="https://www.bing.com/maps?cp=48.94918412700089~-14.603444080779733&amp;sty=h&amp;lvl=1&amp;FORM=MBEDLD">Afficher une carte plus grande</a>
     </div>
 </div>
