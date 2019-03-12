@@ -4623,7 +4623,7 @@ button.close {
   .bs-popover-top .arrow::before, .bs-popover-auto[x-placement^="top"] .arrow::before {
     bottom: 0;
     border-top-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-top .arrow::after,
   .bs-popover-auto[x-placement^="top"] .arrow::after {
     bottom: 1px;
@@ -4643,7 +4643,7 @@ button.close {
   .bs-popover-right .arrow::before, .bs-popover-auto[x-placement^="right"] .arrow::before {
     left: 0;
     border-right-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-right .arrow::after,
   .bs-popover-auto[x-placement^="right"] .arrow::after {
     left: 1px;
@@ -4660,7 +4660,7 @@ button.close {
   .bs-popover-bottom .arrow::before, .bs-popover-auto[x-placement^="bottom"] .arrow::before {
     top: 0;
     border-bottom-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-bottom .arrow::after,
   .bs-popover-auto[x-placement^="bottom"] .arrow::after {
     top: 1px;
@@ -4689,7 +4689,7 @@ button.close {
   .bs-popover-left .arrow::before, .bs-popover-auto[x-placement^="left"] .arrow::before {
     right: 0;
     border-left-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-left .arrow::after,
   .bs-popover-auto[x-placement^="left"] .arrow::after {
     right: 1px;
@@ -7478,6 +7478,23 @@ h1, h2, h3, h4, h5,
   @media (min-width: 992px) {
     #colorlib-main {
       width: 80%; } }
+
+      #searchthis #search-btn {
+        background-color: #E8B960;   /* Couleur de fond */
+        border-style: solid;   /* Style de la bordure  */
+        border-width: 1px;   /* Epaisseur de la bordure  */
+        border-color: #E8B960;   /* Couleur de la bordure  */
+        padding: 5px 10px 5px 10px;   /* Espace entre les bords et le contenu : haut droite bas gauche  */
+        width: 98.5%;   /* Permet d'ajuster la largeur du bouton à 100% */
+        box-sizing: border-box;   /* Important */
+        font-family: PT sans;   /* Police du texte */
+        font-size: 13px;   /* Taille de la police du texte */
+        font-weight: normal;   /* Graisse du texte : normal = normal ; bold = gras */
+        letter-spacing: 2px;   /* Espacement des caractères */
+        margin: 10px 0 0 0;   /* Espace autour du bouton : haut droite bas gauche  */
+        text-transform: uppercase;   /* Transforme le texte en majuscules */
+        color: #ffffff;   /* Couleur du texte */
+      }
 
 .colorlib-nav-toggle {
   cursor: pointer;
