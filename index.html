@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="ngBingMaps">
   <head>
     <title>Project Web qui claque sa mère</title>
     <meta charset="utf-8">
@@ -54,13 +54,20 @@
 
 
 		</aside> <!-- END COLORLIB-ASIDE -->
+
+    <div class="carte">
+      <div class="mainCont" ng-controller="MainCtrl">
+    		<h1>{{title}}</h1>
+
+    		<map center="{{center}}" width="800px" height="100%">
+    			<pushpin ng-repeat="pushpin in pushpins" lat="{{pushpin.latitude}}" lng="{{pushpin.longitude}}" text="{{pushpin.text}}"
+    					 color="{{pushpin.color}}" click="onPushpinClick({{pushpin}})"></pushpin>
+    		</map>
+    	</div>
+    </div>
 		<div id="colorlib-main">
 
-      <div class="map-responsive">
-        <iframe  frameborder="0" src="https://www.bing.com/maps/embed?h=500&w=800&cp=47.98047095244466~-0.24485877139765355&lvl=7&typ=d&sty=h&src=SHELL&FORM=MBEDV8" scrolling="no">
-        </iframe>
 
-      </div>
 			<section class="ftco-section-2">
 
 
@@ -260,9 +267,9 @@
 
   <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
- <script src="/Other/Angular16/app.js"></script>
- <script src="/Other/Angular16/directives.js"></script>
- <script src="/Other/Angular16/services.js"></script>
+ <script src="js/app.js"></script>
+ <script src="js/directives.js"></script>
+ <script src="js/services.js"></script>
  <script type="text/javascript" src="https://www.bing.com/api/maps/mapcontrol?callback=mapScriptLoadCallback&key=ArD-o6L_VuDTfq0vWZtTkTc4DXz7THkk7X--mlIJ-onZQtTeF0fs-lCT_SzfVlP0" async defer></script>
 </head>
 

@@ -7511,11 +7511,13 @@ h1, h2, h3, h4, h5,
 
 
 
-.map-responsive {
-overflow:hidden;
-padding-bottom:42.25%;
-padding-right:25%;
+.carte{
+
+
 position:relative;
+padding-bottom: 0.5%;
+padding-left: 5px;
+display: block;
 
 }
 
