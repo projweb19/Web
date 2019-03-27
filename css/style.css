@@ -7329,7 +7329,7 @@ h1, h2, h3, h4, h5,
   right: 0;
   overflow-y: hidden;
   z-index: 1001;
-  background: #f67e7d;
+  background: #096072;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
@@ -7512,7 +7512,6 @@ h1, h2, h3, h4, h5,
 
 
 .carte{
-
 
 position:relative;
 padding-bottom: 0.5%;

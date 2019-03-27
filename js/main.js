@@ -29,7 +29,7 @@
 
 	// loader
 	var loader = function() {
-		setTimeout(function() { 
+		setTimeout(function() {
 			if($('#ftco-loader').length > 0) {
 				$('#ftco-loader').removeClass('show');
 			}
@@ -49,10 +49,10 @@
 
 			if ($('body').hasClass('offcanvas')) {
 				$this.removeClass('active');
-				$('body').removeClass('offcanvas');	
+				$('body').removeClass('offcanvas');
 			} else {
 				$this.addClass('active');
-				$('body').addClass('offcanvas');	
+				$('body').addClass('offcanvas');
 			}
 		});
 	};
@@ -69,9 +69,9 @@
 
     			$('body').removeClass('offcanvas');
     			$('.js-colorlib-nav-toggle').removeClass('active');
-			
+
 	    	}
-	    	
+
 	    }
 		});
 
@@ -80,7 +80,7 @@
 
     			$('body').removeClass('offcanvas');
     			$('.js-colorlib-nav-toggle').removeClass('active');
-			
+
 	    	}
 		});
 
@@ -114,14 +114,14 @@
 	};
 	carousel();
 
-	
+
 
 	var contentWayPoint = function() {
 		var i = 0;
 		$('.ftco-animate').waypoint( function( direction ) {
 
 			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
-				
+
 				i++;
 
 				$(this.element).addClass('item-animate');
@@ -143,9 +143,9 @@
 							el.removeClass('item-animate');
 						},  k * 50, 'easeInOutExpo' );
 					});
-					
+
 				}, 100);
-				
+
 			}
 
 		} , { offset: '95%' } );
@@ -188,4 +188,3 @@
 
 
 })(jQuery);
-
