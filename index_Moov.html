@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title></title>
+      <meta charset="utf-8" />
+      <script type='text/javascript'>
+      var map;
+      function GetMap() {
+          map = new Microsoft.Maps.Map('#carte', {});
+          var center = map.getCenter();
+
+          //Add a green pushpin that has dragging enabled and events attached to it.
+          var greenPin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(center.latitude, center.longitude - 0.1), { color: '#0f0', draggable: true });
+          map.entities.push(greenPin);
+          Microsoft.Maps.Events.addHandler(greenPin, 'drag', function (e) { highlight('pushpinDrag', e); });
+          Microsoft.Maps.Events.addHandler(greenPin, 'dragend', function (e) { highlight('pushpinDragEnd', e); });
+          Microsoft.Maps.Events.addHandler(greenPin, 'dragstart', function (e) { highlight('pushpinDragStart', e); });
+
+      }
+
+      function highlight(id, event) {
+          //Highlight the mouse event div to indicate that the event has fired.
+          document.getElementById(id).style.background = 'LightGreen';
+          document.getElementById('pushpinLocation').innerText = event.target.getLocation().toString();
+          //Remove the highlighting after a second.
+          setTimeout(function () { document.getElementById(id).style.background = 'white'; }, 1000);
+      }
+      </script>
+      <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[YOUR_BING_MAPS_KEY]' async defer></script>
+  </head>
+  <body>
+    
+      <div id="carte" style="position:relative;width:800px;height:600px;"></div>
+      <div id="pushpinDrag"></div>
+      <div id="pushpinDragEnd"></div>
+      <div id="pushpinDragStart"></div>
+      <div>Pin Location: <span id="pushpinLocation"></span></div>
+
+  </body>
+</html>
