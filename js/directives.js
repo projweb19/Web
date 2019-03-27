@@ -45,7 +45,7 @@ ngBingMaps.directive('map', [function ($compile) {
                 _thisCtrl.map = new Microsoft.Maps.Map(map_canvas, {
                     center: new Microsoft.Maps.Location(def_coords[0], def_coords[1]),
                     mapTypeId: 'a',
-                    zoom: 18
+                    zoom: 5
                 });
 
                 _thisCtrl.initializePushpins();
