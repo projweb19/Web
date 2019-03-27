@@ -7511,23 +7511,12 @@ h1, h2, h3, h4, h5,
 
 
 
-.carte{
-
-position:relative;
-padding-bottom: 0.5%;
-padding-left: 5px;
-display: block;
+#myMap {
+  width: 79.5vw;
+  height: 70vh;
+  float: right;
 
 }
-
-.map-responsive iframe {
-
-top:0;
-height:100%;
-width:100%;
-position:absolute;
-}
-
 
 
 .colorlib-nav-toggle {

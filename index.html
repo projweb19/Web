@@ -27,12 +27,13 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
-  <body>
+  <body onload='loadMapScenario();'>
+
 
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
-      <!-- LE NOM DE LA PAGE -->
+
 			<nav id="colorlib-main-menu" role="navigation">
 				<ul>
 					<h1>Globular</h1>
@@ -53,21 +54,11 @@
 
 
 
-		</aside> <!-- END COLORLIB-ASIDE -->
+		</aside>
 
+  </div>
 
-
-
-    </div>
-    <div class="carte">
-      <div class="mainCont" ng-controller="MainCtrl">
-    		<h1>{{title}}</h1>
-
-    		<map center="{{center}}" width="800px" height="100%">
-    			<pushpin ng-repeat="pushpin in pushpins" lat="{{pushpin.latitude}}" lng="{{pushpin.longitude}}" text="{{pushpin.text}}"
-    					 color="{{pushpin.color}}" click="onPushpinClick({{pushpin}})"></pushpin>
-    		</map>
-    	</div>
+     <div id='myMap'></div>
 		<div id="colorlib-main">
 
 
@@ -269,14 +260,12 @@
   <script src="js/jquery.timepicker.min.js"></script>
   <script src="js/scrollax.min.js"></script>
   <script src="js/main.js"></script>
-
+  <script src="js/map.js"></script>
   <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
- <script src="js/app.js"></script>
- <script src="js/directives.js"></script>
- <script src="js/services.js"></script>
+
  <script type="text/javascript" src="https://www.bing.com/api/maps/mapcontrol?callback=mapScriptLoadCallback&key=ArD-o6L_VuDTfq0vWZtTkTc4DXz7THkk7X--mlIJ-onZQtTeF0fs-lCT_SzfVlP0" async defer></script>
-</head>
+
 
   </body>
 </html>
