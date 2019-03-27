@@ -16,7 +16,8 @@ function loadMapScenario() {
 
     Microsoft.Maps.Events.addHandler(map, 'click',createPushPin );
 
-    Microsoft.Maps.Events.addHandler(pushpin, 'dragend', function () { highlight(); });
+
+
 
 }
 
@@ -28,8 +29,9 @@ function createPushPin (e) {
 
      map.entities.remove(pushpin);
      pushpin = new Microsoft.Maps.Pushpin(location, {'draggable': true});
-
-       map.entities.push(pushpin);
+     map.entities.push(pushpin);
+     Microsoft.Maps.Events.addHandler(pushpin, 'drag', function () { highlight(); });
+     pushpinLocation();
 
   }
 
@@ -37,4 +39,8 @@ function createPushPin (e) {
 
 function highlight(e) {
   alert("&");
+}
+
+function pushpinLocation () {
+  alert(pushpin.getLocation().latitude + "\n" + pushpin.getLocation().longitude);
 }
