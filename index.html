@@ -35,18 +35,6 @@
         <h2>
           <span id="btnClose" class="btnClose">&times;</span>
           <p>Vous devez vous connecter à instagram pour pouvoir utiliser notre site :'( </p>
-          <a href="https://api.instagram.com/oauth/authorize/?client_id=414d05e00687465dac346b68d43d6b71&redirect_uri=http://info.univ-lemans.fr/~s162734/Web/&response_type=code">Cliquez ici pour vous connecter</a>
-          <?php
-              function rudr_instagram_api_curl_connect( $api_url ){
-                  $connection_c = curl_init(); // initializing
-                  curl_setopt( $connection_c, CURLOPT_URL, $api_url ); // API URL to connect
-                  curl_setopt( $connection_c, CURLOPT_RETURNTRANSFER, 1 ); // return the result, do not print
-                  curl_setopt( $connection_c, CURLOPT_TIMEOUT, 20 );
-                  $json_return = curl_exec( $connection_c ); // connect and get json data
-                  curl_close( $connection_c ); // close connection
-                  return json_decode( $json_return ); // decode and return
-              }
-          ?>
 
         </h2>
       </div>
@@ -88,7 +76,7 @@
 
 
 						<div class="col-md-4 ftco-animate">
-							<a href="https://cdn2.tourmontparnasse56.com/wp-content/uploads/2018/07/@david_fossa-2.jpg" class="photography-entry img image-popup d-flex justify-content-center align-items-center" style="background-image: url(images/image_1.jpg);">
+							<a href="https://cdn2.tourmontparnasse56.com/wp-content/uploads/2018/07/@david_fossa-2.jpg" class="photography-entry img image-popup d-flex justify-content-center align-items-center" style="background-image: url(https://cdn2.tourmontparnasse56.com/wp-content/uploads/2018/07/@david_fossa-2.jpg);">
 								<div class="overlay"></div>
 								<div class="text text-center">
 									<h3>Work 01</h3>
