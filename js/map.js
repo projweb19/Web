@@ -1,6 +1,7 @@
 var map;
 var pushpin = null;
 
+
 function loadMapScenario() {
 
     map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
@@ -16,9 +17,7 @@ function loadMapScenario() {
     });
 
     Microsoft.Maps.Events.addHandler(map, 'click',createPushPin );
-
     Microsoft.Maps.loadModule('Microsoft.Maps.AutoSuggest', autoSugg);
-
 }
 
 function autoSugg () {
@@ -26,25 +25,21 @@ function autoSugg () {
       maxResults: 6,
       map: map
   };
+
   var manager = new Microsoft.Maps.AutosuggestManager(options);
   manager.attachAutosuggest('#searchBox', '#searchBoxContainer', selectedSuggestion);
 }
 
 function selectedSuggestion(suggestionResult) {
-    map.entities.clear();
+
+
     map.setView({ bounds: suggestionResult.bestView });
+    map.entities.remove(pushpin);
     pushpin = new Microsoft.Maps.Pushpin(suggestionResult.location, {'draggable': true, color: 'cyan'});
     Microsoft.Maps.Events.addHandler(pushpin, 'dragend', function () { pushpinLocation(); });
     map.entities.push(pushpin);
-
-    document.getElementById('printoutPanel').innerHTML =
-                        'Suggestion: ' + suggestionResult.formattedSuggestion +
-                            '<br> Lat: ' + suggestionResult.location.latitude +
-                            '<br> Lon: ' + suggestionResult.location.longitude;
-
-
+    pushpinLocation();
 }
-
 
 function createPushPin (e) {
   if (e.targetType == "map") {
@@ -59,13 +54,12 @@ function createPushPin (e) {
      pushpinLocation();
 
   }
-
-}
-
-function highlight(e) {
-  //alert("&");
 }
 
 function pushpinLocation () {
   //alert(pushpin.getLocation().latitude + "\n" + pushpin.getLocation().longitude);
+  document.getElementById('printoutPanel').innerHTML =
+                          '<br> Lat: ' + pushpin.getLocation().latitude +
+                          '<br> Lon: ' + pushpin.getLocation().longitude;
+  return pushpin.getLocation();
 }
