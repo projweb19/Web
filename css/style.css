@@ -5,7 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
- #overlay{
+ #overlay1{
    position:fixed;
    z-index:10;
    left:0px;
