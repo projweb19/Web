@@ -1,8 +1,8 @@
 var btnClose = document.getElementById('btnClose');
-var overlay = document.getElementById('overlay');
+var overlay1 = document.getElementById('overlay1');
 
 btnClose.addEventListener('click',closePopup);
 
 function closePopup(){
-  overlay.style.display = 'none';
+  overlay1.style.display = 'none';
 }
