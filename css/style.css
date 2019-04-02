@@ -4,6 +4,39 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+
+ #overlay{
+   position:fixed;
+   z-index:10;
+   left:0px;
+   top:0px;
+   background-color: rgba(0,0,0,0.8);
+   width: 100%;
+   height:100%;
+ }
+
+ .popup{
+   margin:20% auto;
+   width:70%;
+   background-color: #fff;
+   border-radius: 5px;
+   box-shadow: 15px 20px 0 rgba(0,0,0,0.5);
+   padding:1em;
+ }
+
+ .btnClose{
+   float: right;
+   cursor: pointer;
+ }: 15px 20px 0 rgba(0,0,0,0.5);
+   padding:1em;
+ }
+
+ .btnClose{
+   float: right;
+   cursor: pointer;
+ }
+
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -7314,7 +7347,8 @@ h1, h2, h3, h4, h5,
 #colorlib-page {
   width: 100%;
   overflow: hidden;
-  position: relative; }
+  position: relative;
+  z-index:9; }
 
 #colorlib-aside {
   padding-top: 3em;

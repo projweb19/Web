@@ -30,6 +30,17 @@
   <body onload='loadMapScenario();'>
 
 
+    <div id="overlay" class "overlay">
+      <div id="popup" class="popup">
+        <h2>
+          <span id="btnClose" class="btnClose">&times;</span>
+          <p>Vous devez vous connecter à instagram pour pouvoir utiliser notre site :'( </p>
+
+        </h2>
+      </div>
+    </div>
+
+
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
@@ -59,6 +70,9 @@
   </div>
 
      <div id='myMap'></div>
+
+
+
 		<div id="colorlib-main">
 
 
@@ -245,6 +259,7 @@
     </svg>
   </div>
 
+  <script src="js/popup.js"></script>
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
