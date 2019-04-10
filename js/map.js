@@ -1,5 +1,6 @@
 var map;
 var pushpin = null;
+var address;
 
 
 function loadMapScenario() {
@@ -18,6 +19,7 @@ function loadMapScenario() {
 
     Microsoft.Maps.Events.addHandler(map, 'click',createPushPin );
     Microsoft.Maps.loadModule('Microsoft.Maps.AutoSuggest', autoSugg);
+    Microsoft.Maps.loadModule('Microsoft.Maps.Search', locationToAddress);
 }
 
 function autoSugg () {
@@ -51,7 +53,8 @@ function createPushPin (e) {
      pushpin = new Microsoft.Maps.Pushpin(location, {'draggable': true, color: 'cyan'});
      map.entities.push(pushpin);
      Microsoft.Maps.Events.addHandler(pushpin, 'dragend', function () { pushpinLocation(); });
-     pushpinLocation();
+
+     locationToAddress();
 
   }
 }
@@ -62,4 +65,18 @@ function pushpinLocation () {
                           '<br> Lat: ' + pushpin.getLocation().latitude +
                           '<br> Lon: ' + pushpin.getLocation().longitude;
   return pushpin.getLocation();
+}
+
+
+function locationToAddress ()  {
+    var searchManager = new Microsoft.Maps.Search.SearchManager(map);
+    var reverseGeocodeRequestOptions = {
+        location: pushpin.getLocation(),
+        callback: function (answer, userData) {
+
+            document.getElementById('printoutPanel').innerHTML =
+                answer.address.formattedAddress;
+        }
+    };
+    searchManager.reverseGeocode(reverseGeocodeRequestOptions);
 }
