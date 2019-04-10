@@ -1,6 +1,8 @@
 var map;
 var pushpin = null;
 var addresse;
+nbHash = 0;
+var tabHash = [];
 
 
 function loadMapScenario() {
@@ -18,6 +20,7 @@ function loadMapScenario() {
     });
 
     Microsoft.Maps.Events.addHandler(map, 'click',createPushPin );
+    document.getElementById("btnHash").addEventListener("click", hashtagAjouter);
     Microsoft.Maps.loadModule('Microsoft.Maps.AutoSuggest', autoSugg);
     Microsoft.Maps.loadModule('Microsoft.Maps.Search', locationToAddress);
 }
@@ -75,8 +78,6 @@ function locationToAddress ()  {
           adresse = answer.address
           hashtagCreer();
 
-            document.getElementById('printoutPanel').innerHTML =
-                adresse.locality + ', ' + adresse.countryRegion;
         }
     };
     searchManager.reverseGeocode(reverseGeocodeRequestOptions);
@@ -84,7 +85,57 @@ function locationToAddress ()  {
 }
 
 function hashtagCreer () {
-  document.getElementById('printoutHash').innerHTML =
-    '#'+adresse.locality +
-    '<br>#' + adresse.countryRegion;
+  //hashtagVider();
+  var ville = document.createElement("BUTTON");
+  var pays = document.createElement("BUTTON");
+  ville.innerHTML = adresse.locality;
+  tabHash.push(adresse.locality.toLowerCase());
+  ville.id = "boutonNum" + nbHash;
+  nbHash++;
+  pays.innerHTML = adresse.countryRegion;
+  tabHash.push(adresse.countryRegion.toLowerCase());
+  pays.id = "boutonNum" + nbHash;
+  nbHash++;
+  document.getElementById('printoutHash').appendChild(ville);
+  document.getElementById('printoutHash').appendChild(pays);
+  document.getElementById(ville.id).addEventListener("click", hashtagSupprimer);
+  document.getElementById(pays.id).addEventListener("click", hashtagSupprimer);
+  //affichetab ();
 }
+
+function hashtagAjouter () {
+  var btn = document.createElement("BUTTON");
+  btn.innerHTML = prompt("Entrez le hashtag", "");
+  tabHash.push(btn.innerHTML.toLowerCase());
+  btn.id = "boutonNum" + nbHash;
+  nbHash++;
+  document.getElementById("printoutHash").appendChild(btn);
+  document.getElementById(btn.id).addEventListener("click", hashtagSupprimer);
+  //affichetab ();
+}
+
+function hashtagSupprimer () {
+tabHash.splice(tabHash.indexOf(this.innerHTML),1);
+var element = document.getElementById(this.id);
+element.remove();
+}
+
+function hashtagVider () {
+  while (nbHash > 0) {
+
+    var idElem = "boutonNum" + nbHash;
+    var element = document.getElementById(idElem);
+    tabHash.splice(tabHash.indexOf(element.innerHTML),1);
+    element.remove();
+    nbHash--;
+  }
+  nbHash = 0;
+}
+
+//Affiche dans la console le contenu du tableau de hastags. Utilisé pour vérifier que le tableau se remplit et se vide correctement.
+/*function affichetab () {
+  var contenu = "";
+  tabHash.forEach (function(item, index, array) {
+  console.log(item, index);
+});
+}*/
