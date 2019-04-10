@@ -20,7 +20,7 @@ function loadMapScenario() {
 
     Microsoft.Maps.Events.addHandler(map, 'click',createPushPin );
     document.getElementById("btnHash").addEventListener("click", hashtagAjouter);
-    document.getElementById("printoutHash").addEventListener("dblclick", hashtagSupprimer);
+    document.getElementById("printoutHash").addEventListener("click", hashtagSupprimer);
     Microsoft.Maps.loadModule('Microsoft.Maps.AutoSuggest', autoSugg);
     Microsoft.Maps.loadModule('Microsoft.Maps.Search', locationToAddress);
 }
@@ -104,8 +104,8 @@ function hashtagAjouter () {
   document.getElementById("printoutHash").appendChild(btn);
 }
 
-function hashtagSupprimer () {
+function hashtagSupprimer (idElement) {
 
-var element = document.getElementById("boutonNum2");
+var element = document.getElementById("boutonNum0");
 element.nextElementSibling.remove();
 }
