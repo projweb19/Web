@@ -136,49 +136,5 @@
 
  <script src="https://www.bing.com/api/maps/mapcontrol?callback=mapScriptLoadCallback&setLang=fr&key=ArD-o6L_VuDTfq0vWZtTkTc4DXz7THkk7X--mlIJ-onZQtTeF0fs-lCT_SzfVlP0" async defer></script>
 
-<<<<<<< HEAD
-=======
-
-  <script type="text/javascript">
-<<<<<<< HEAD
-      var feed = new Instafeed({
-        get: 'user',
-        userId: c3eae3a893774568b0430cca7bcc6000,
-        accessToken: '11697647830.1677ed0.c4f52de6b25245a89a6917ede9a05b56',
-        resolution: 'standard_resolution',
-        template: '<a href="{{link}}" target="_blank" id="{{id}}"><img src="{{image}}" /></a>',
-        sortBy: 'most-recent',
-        limit: 1,
-        links: true
-      });
-      feed.run();
-=======
-  var galleryFeed = new Instafeed({
-    get: "user",
-    userId: 11697647830,
-    accessToken: "11697647830.1677ed0.c4f52de6b25245a89a6917ede9a05b56",
-    resolution: "standard_resolution",
-    useHttp: "false",
-    limit: 1,
-    template: '<a href="{{image}}"><img src="{{image}}" class="img-responsive"></a>',
-    target: "instafeed",
-    after: function() {
-      // disable button if no more results to load
-      if (!this.hasNext()) {
-        btnInstafeedLoad.setAttribute('disabled', 'disabled');
-      }
-    },
-  });
-  galleryFeed.run();
-
-  var btnInstafeedLoad = document.getElementById("btn-instafeed-load");
-    btnInstafeedLoad.addEventListener("click", function() {
-    galleryFeed.next()
-  });
->>>>>>> 821c227e46ce1c10e1afe6e4744d95431327af9f
-  </script>
-
-
->>>>>>> 34ccb973e1247533e0ebdade8e9dcff76e546403
   </body>
 </html>
