@@ -268,5 +268,20 @@
  <script src="https://www.bing.com/api/maps/mapcontrol?callback=mapScriptLoadCallback&setLang=fr&key=ArD-o6L_VuDTfq0vWZtTkTc4DXz7THkk7X--mlIJ-onZQtTeF0fs-lCT_SzfVlP0" async defer></script>
 
 
+  <script type="text/javascript">
+      var feed = new Instafeed({
+        get: 'user',
+        userId: '8987997106',
+        accessToken: '8987997106.924f677.8555ecbd52584f41b9b22ec1a16dafb9',
+        resolution: 'standard_resolution',
+        template: '<a href="{{link}}" target="_blank" id="{{id}}"><img src="{{image}}" /></a>',
+        sortBy: 'most-recent',
+        limit: 4,
+        links: false
+      });
+      feed.run();
+  </script>
+
+
   </body>
 </html>
