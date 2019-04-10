@@ -100,6 +100,8 @@ function hashtagCreer () {
   document.getElementById('printoutHash').appendChild(pays);
   document.getElementById(ville.id).addEventListener("click", hashtagSupprimer);
   document.getElementById(pays.id).addEventListener("click", hashtagSupprimer);
+  newGalleryFeed();
+
   //affichetab ();
 }
 
@@ -111,13 +113,15 @@ function hashtagAjouter () {
   nbHash++;
   document.getElementById("printoutHash").appendChild(btn);
   document.getElementById(btn.id).addEventListener("click", hashtagSupprimer);
+  newGalleryFeed();
   //affichetab ();
 }
 
 function hashtagSupprimer () {
-tabHash.splice(tabHash.indexOf(this.innerHTML),1);
-var element = document.getElementById(this.id);
-element.remove();
+  tabHash.splice(tabHash.indexOf(this.innerHTML),1);
+  var element = document.getElementById(this.id);
+  element.remove();
+  newGalleryFeed();
 }
 
 function hashtagVider () {

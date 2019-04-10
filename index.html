@@ -29,14 +29,14 @@
   </head>
   <body onload='loadMapScenario();'>
 
-    <div id="overlay1" class="overlay1">
+    <!-- <div id="overlay1" class="overlay1">
       <div id="popup" class="popup">
         <h2>
           <span id="btnClose" class="btnClose">&times;</span>
           <p>Vous devez vous connecter à instagram pour pouvoir utiliser notre site :'( </p>
         </h2>
       </div>
-    </div>
+    </div> -->
     <div id="colorlib-page">
       <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
       <aside id="colorlib-aside" class="js-fullheight text-center">
@@ -74,13 +74,13 @@
 						</div>
 					</div>
 				</div>
+        <button id="btn-load" class="btn">Charger plus pour gagner plus</button>
 			</section>
 	    <footer class="ftco-footer ftco-bg-dark ftco-section">
 	      <div class="container px-md-5">
 	        <div class="row mb-5">
 	          <div class="col-md">
 	            <div class="ftco-footer-widget mb-4 ml-md-4">
-
                 <!-- A RECYCLER DANS LE BAC VERT-->
 	              <h2 class="ftco-heading-2"># Hashtags populaires</h2>
 	              <ul class="list-unstyled categories">
@@ -89,14 +89,11 @@
 	                <li><a href="#">Technology <span>(2)</span></a></li>
 	                <li><a href="#">Travel <span>(2)</span></a></li>
 	              </ul>
-
-
 	            </div>
 	          </div>
 	        </div>
 	        <div class="row">
 	          <div class="col-md-12">
-
 
 	          </div>
 	        </div>
@@ -105,13 +102,6 @@
 		</div><!-- END COLORLIB-MAIN -->
 	</div><!-- END COLORLIB-PAGE -->
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen">
-    <svg class="circular" width="48px" height="48px">
-      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
-      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
-    </svg>
-  </div>
 
   <script src="js/popup.js"></script>
   <script src="js/jquery.min.js"></script>
@@ -133,8 +123,7 @@
   <script type="text/javascript" src="js/instafeed.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
-
- <script src="https://www.bing.com/api/maps/mapcontrol?callback=mapScriptLoadCallback&setLang=fr&key=ArD-o6L_VuDTfq0vWZtTkTc4DXz7THkk7X--mlIJ-onZQtTeF0fs-lCT_SzfVlP0" async defer></script>
+  <script src="https://www.bing.com/api/maps/mapcontrol?callback=mapScriptLoadCallback&setLang=fr&key=ArD-o6L_VuDTfq0vWZtTkTc4DXz7THkk7X--mlIJ-onZQtTeF0fs-lCT_SzfVlP0" async defer></script>
 
   </body>
 </html>
