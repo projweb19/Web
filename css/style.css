@@ -7539,6 +7539,10 @@ h1, h2, h3, h4, h5,
 
 }
 
+#hashtag-Wall {
+  padding-top: 15%;
+}
+
 
 .colorlib-nav-toggle {
   cursor: pointer;

@@ -1,6 +1,6 @@
 var map;
 var pushpin = null;
-var address;
+var addresse;
 
 
 function loadMapScenario() {
@@ -61,9 +61,8 @@ function createPushPin (e) {
 
 function pushpinLocation () {
   //alert(pushpin.getLocation().latitude + "\n" + pushpin.getLocation().longitude);
-  document.getElementById('printoutPanel').innerHTML =
-                          '<br> Lat: ' + pushpin.getLocation().latitude +
-                          '<br> Lon: ' + pushpin.getLocation().longitude;
+
+  locationToAddress ();
   return pushpin.getLocation();
 }
 
@@ -73,10 +72,19 @@ function locationToAddress ()  {
     var reverseGeocodeRequestOptions = {
         location: pushpin.getLocation(),
         callback: function (answer, userData) {
+          adresse = answer.address
+          hashtagCreer();
 
             document.getElementById('printoutPanel').innerHTML =
-                answer.address.formattedAddress;
+                adresse.locality + ', ' + adresse.countryRegion;
         }
     };
     searchManager.reverseGeocode(reverseGeocodeRequestOptions);
+
+}
+
+function hashtagCreer () {
+  document.getElementById('printoutHash').innerHTML =
+    '#'+adresse.locality +
+    '<br>#' + adresse.countryRegion;
 }
