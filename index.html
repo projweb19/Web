@@ -76,10 +76,9 @@
 
 
 						<div class="col-md-4 ftco-animate">
-							<a href="https://cdn2.tourmontparnasse56.com/wp-content/uploads/2018/07/@david_fossa-2.jpg" class="photography-entry img image-popup d-flex justify-content-center align-items-center" style="background-image: url(https://cdn2.tourmontparnasse56.com/wp-content/uploads/2018/07/@david_fossa-2.jpg);">
-								<div class="overlay"></div>
+              <div id="instafeed"></div>
+    					<div class="overlay"></div>
 								<div class="text text-center">
-									<h3>Work 01</h3>
 
 									 <!-- <span class="tag">Model</span> -->
 
@@ -265,10 +264,26 @@
   <script src="js/scrollax.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/map.js"></script>
+  <script type="text/javascript" src="js/instafeed.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
 
  <script src="https://www.bing.com/api/maps/mapcontrol?callback=mapScriptLoadCallback&setLang=fr&key=ArD-o6L_VuDTfq0vWZtTkTc4DXz7THkk7X--mlIJ-onZQtTeF0fs-lCT_SzfVlP0" async defer></script>
+
+
+  <script type="text/javascript">
+      var feed = new Instafeed({
+        get: 'user',
+        userId: '8987997106',
+        accessToken: '8987997106.924f677.8555ecbd52584f41b9b22ec1a16dafb9',
+        resolution: 'standard_resolution',
+        template: '<a href="{{link}}" target="_blank" id="{{id}}"><img src="{{image}}" /></a>',
+        sortBy: 'most-recent',
+        limit: 4,
+        links: false
+      });
+      feed.run();
+  </script>
 
 
   </body>
