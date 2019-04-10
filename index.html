@@ -51,6 +51,7 @@
              </div>
              <div id="hashtag-Wall">
                <h2>Mur de hashtags</h2>
+               <button id="btnHash">Ajouter #</button>
                <div id='printoutHash'></div>
              </div>
            </ul>
@@ -274,13 +275,13 @@
   <script type="text/javascript">
       var feed = new Instafeed({
         get: 'user',
-        userId: '8987997106',
-        accessToken: '8987997106.924f677.8555ecbd52584f41b9b22ec1a16dafb9',
+        userId: c3eae3a893774568b0430cca7bcc6000,
+        accessToken: '11697647830.1677ed0.c4f52de6b25245a89a6917ede9a05b56',
         resolution: 'standard_resolution',
         template: '<a href="{{link}}" target="_blank" id="{{id}}"><img src="{{image}}" /></a>',
         sortBy: 'most-recent',
-        limit: 4,
-        links: false
+        limit: 1,
+        links: true
       });
       feed.run();
   </script>

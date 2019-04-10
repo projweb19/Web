@@ -1,6 +1,7 @@
 var map;
 var pushpin = null;
 var addresse;
+nbHash = 0;
 
 
 function loadMapScenario() {
@@ -18,6 +19,8 @@ function loadMapScenario() {
     });
 
     Microsoft.Maps.Events.addHandler(map, 'click',createPushPin );
+    document.getElementById("btnHash").addEventListener("click", hashtagAjouter);
+    document.getElementById("printoutHash").addEventListener("dblclick", hashtagSupprimer);
     Microsoft.Maps.loadModule('Microsoft.Maps.AutoSuggest', autoSugg);
     Microsoft.Maps.loadModule('Microsoft.Maps.Search', locationToAddress);
 }
@@ -75,8 +78,6 @@ function locationToAddress ()  {
           adresse = answer.address
           hashtagCreer();
 
-            document.getElementById('printoutPanel').innerHTML =
-                adresse.locality + ', ' + adresse.countryRegion;
         }
     };
     searchManager.reverseGeocode(reverseGeocodeRequestOptions);
@@ -84,7 +85,27 @@ function locationToAddress ()  {
 }
 
 function hashtagCreer () {
-  document.getElementById('printoutHash').innerHTML =
-    '#'+adresse.locality +
-    '<br>#' + adresse.countryRegion;
+  var ville = document.createElement("BUTTON");
+  var pays = document.createElement("BUTTON");
+  ville.innerHTML = adresse.locality;
+  ville.id = "boutonNum" + nbHash;
+  nbHash++;
+  pays.innerHTML = adresse.countryRegion;
+  pays.id = "boutonNum" + nbHash;
+  nbHash++;
+
+  document.getElementById('printoutHash').appendChild(ville);
+  document.getElementById('printoutHash').appendChild(pays);
+}
+
+function hashtagAjouter () {
+  var btn = document.createElement("BUTTON");
+  btn.innerHTML = prompt("Entrez le hashtag", "");
+  document.getElementById("printoutHash").appendChild(btn);
+}
+
+function hashtagSupprimer () {
+
+var element = document.getElementById("boutonNum2");
+element.nextElementSibling.remove();
 }
