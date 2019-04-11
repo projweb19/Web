@@ -1,4 +1,4 @@
-/*!
+﻿/*!
  * Bootstrap v4.1.0 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
@@ -35,6 +35,7 @@
    float: right;
    cursor: pointer;
  }
+
 
 
 :root {
@@ -7543,12 +7544,41 @@ h1, h2, h3, h4, h5,
   padding-top: 15%;
 }
 
+#btnHash {
+  -webkit-border-radius: 30;
+  -moz-border-radius: 30;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 24px;
+  background: #0b3852;
+  padding: 10px 20px 10px 20px;
+  border: solid #1f628d 3px;
+  text-decoration: none;
+}
+
+#btnHash:hover {
+	
+  background: #297eb3;
+  text-decoration: none;
+}
+
+.hashStyle {
+  border-radius: 30px;
+  color: #fff;
+  font-size: 14px;
+  background: #0b3852;
+  padding: 5px 5px 5px 5px;
+  border: solid #1f628d 1px;
+
+}
+
 #btn-load {
   color: #fff;
-  background: #096072;
+  background: #0b3852;
   font-size: 16px;
   margin: 20px auto;
-  padding: 8px 40px;
+  padding: 10px 20px 10px 20px;
+  border: solid #1f628d 3px;
   display: block;
   border: none;
 }

@@ -91,10 +91,12 @@ function hashtagCreer () {
   ville.innerHTML = adresse.locality;
   tabHash.push(adresse.locality.toLowerCase());
   ville.id = "boutonNum" + nbHash;
+  ville.classList.add("hashStyle");
   nbHash++;
   pays.innerHTML = adresse.countryRegion;
   tabHash.push(adresse.countryRegion.toLowerCase());
   pays.id = "boutonNum" + nbHash;
+  pays.classList.add("hashStyle");
   nbHash++;
   document.getElementById('printoutHash').appendChild(ville);
   document.getElementById('printoutHash').appendChild(pays);
@@ -107,14 +109,18 @@ function hashtagCreer () {
 
 function hashtagAjouter () {
   var btn = document.createElement("BUTTON");
-  btn.innerHTML = prompt("Entrez le hashtag", "");
-  tabHash.push(btn.innerHTML.toLowerCase());
-  btn.id = "boutonNum" + nbHash;
-  nbHash++;
-  document.getElementById("printoutHash").appendChild(btn);
-  document.getElementById(btn.id).addEventListener("click", hashtagSupprimer);
-  newGalleryFeed();
-  //affichetab ();
+  var texte = prompt("Entrez le hashtag", "");
+  if (texte != null && texte != "") {
+  	  btn.innerHTML = texte;
+	  tabHash.push(btn.innerHTML.toLowerCase());
+	  btn.id = "boutonNum" + nbHash;
+	  btn.classList.add("hashStyle");
+	  nbHash++;
+	  document.getElementById("printoutHash").appendChild(btn);
+	  document.getElementById(btn.id).addEventListener("click", hashtagSupprimer);
+	  newGalleryFeed();
+	  //affichetab ();
+  }
 }
 
 function hashtagSupprimer () {
