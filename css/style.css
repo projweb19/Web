@@ -7537,7 +7537,11 @@ h1, h2, h3, h4, h5,
   width: 79.5vw;
   height: 70vh;
   float: right;
+}
 
+#logoUniv {
+  width: 120px;
+  height: 120px;
 }
 
 #hashtag-Wall {
@@ -7557,7 +7561,7 @@ h1, h2, h3, h4, h5,
 }
 
 #btnHash:hover {
-	
+
   background: #297eb3;
   text-decoration: none;
 }

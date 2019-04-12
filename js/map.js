@@ -1,8 +1,10 @@
 var map;
 var pushpin = null;
 var addresse;
+var addresseOld;
 nbHash = 0;
 var tabHash = [];
+var tabHashID = [];
 
 
 function loadMapScenario() {
@@ -89,13 +91,17 @@ function hashtagCreer () {
   var ville = document.createElement("BUTTON");
   var pays = document.createElement("BUTTON");
   ville.innerHTML = adresse.locality;
-  tabHash.push(adresse.locality.toLowerCase());
+  adresse.locality = adresse.locality.toLowerCase();
+  adresse.locality = adresse.locality.replace(/\s/g, '');
+  tabHash.push(adresse.locality);
   ville.id = "boutonNum" + nbHash;
+  tabHashID.push(ville.id);
   ville.classList.add("hashStyle");
   nbHash++;
   pays.innerHTML = adresse.countryRegion;
   tabHash.push(adresse.countryRegion.toLowerCase());
   pays.id = "boutonNum" + nbHash;
+  tabHashID.push(pays.id);
   pays.classList.add("hashStyle");
   nbHash++;
   document.getElementById('printoutHash').appendChild(ville);
@@ -112,8 +118,10 @@ function hashtagAjouter () {
   var texte = prompt("Entrez le hashtag", "");
   if (texte != null && texte != "") {
   	  btn.innerHTML = texte;
+  	  btn.innerHTML = btn.innerHTML.replace(/\s/g, '');
 	  tabHash.push(btn.innerHTML.toLowerCase());
 	  btn.id = "boutonNum" + nbHash;
+	  tabHashID.push(btn.id);
 	  btn.classList.add("hashStyle");
 	  nbHash++;
 	  document.getElementById("printoutHash").appendChild(btn);
@@ -124,10 +132,13 @@ function hashtagAjouter () {
 }
 
 function hashtagSupprimer () {
-  tabHash.splice(tabHash.indexOf(this.innerHTML),1);
   var element = document.getElementById(this.id);
   element.remove();
+  tabHash.splice(tabHashID.indexOf(this.id), 1);
+  tabHashID.splice(tabHashID.indexOf(this.id), 1);
+
   newGalleryFeed();
+  //affichetab ();
 }
 
 function hashtagVider () {
@@ -143,9 +154,9 @@ function hashtagVider () {
 }
 
 //Affiche dans la console le contenu du tableau de hastags. Utilisé pour vérifier que le tableau se remplit et se vide correctement.
-/*function affichetab () {
+function affichetab () {
   var contenu = "";
   tabHash.forEach (function(item, index, array) {
   console.log(item, index);
 });
-}*/
+}
